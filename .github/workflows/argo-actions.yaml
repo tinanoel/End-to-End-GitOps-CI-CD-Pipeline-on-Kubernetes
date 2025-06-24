@@ -68,6 +68,7 @@ jobs:
                   
             - name: Login to ArgoCD
               run: |
+                echo ${{ secrets.ARGOCD_SERVER }}
                 argocd login ${{ secrets.ARGOCD_SERVER }} \
                     --username ${{ secrets.ARGOCD_USERNAME }} \
                     --password ${{ secrets.ARGOCD_PASSWORD }} \
